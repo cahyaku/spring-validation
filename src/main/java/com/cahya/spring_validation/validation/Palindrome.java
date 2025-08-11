@@ -10,7 +10,8 @@ import java.lang.annotation.*;
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Palindrome {
-    String message() default "{palindrome.message}";
+    // ada tanda kurung kurawal, karena akan mengambil dari message sourcenya => message.properties
+    String message() default "{Palindrome.message}";
 
     Class<?>[] groups() default {};
 

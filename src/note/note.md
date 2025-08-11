@@ -45,3 +45,15 @@ https://docs.google.com/presentation/d/133iTYTxD52P5vD-Z74Gt4_I8A5ESZbzOsKcP4REi
 > > 4. Buat kelas Foo => pacakage data.
 > > 5. Buat unit test baru, namanmya PalindromeTest.
 > > 6. Buat test untuk invalid palindrome dan valid palindrome.
+
+## Message Source
+
+```
+- Saat membuat error message di Bean Validation, secara otomatis Bean
+  Validation akan mencari pesan error di file messages.properties.
+- Secara defaault, Messsage Source akan mencari pesan error di file messages.properties.
+```
+
+> > Contoh: Membuat messages.properties
+> > 1. Buat file messages.properties di src/main/resources.
+> > 2. Update unit testnya pada class ValidatorTest => palindromeInvalidMessage()
