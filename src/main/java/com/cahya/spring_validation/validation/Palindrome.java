@@ -11,6 +11,8 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Palindrome {
     // ada tanda kurung kurawal, karena akan mengambil dari message sourcenya => message.properties
+    // Jadi di dalam annotation bisa tambahkan sebagai berikut:
+    // Lalu tinggal di simpan di src/main/resources/messages.properties
     String message() default "{Palindrome.message}";
 
     Class<?>[] groups() default {};
