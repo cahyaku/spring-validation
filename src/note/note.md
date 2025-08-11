@@ -74,3 +74,26 @@ https://docs.google.com/presentation/d/133iTYTxD52P5vD-Z74Gt4_I8A5ESZbzOsKcP4REi
         dengan setiap method memiliki fitur validasi secara otomatis.
         Pada pacakage helper => SayHello.java
 > >> 2. Buat class SayHelloTest untuk melakukan unit test.
+
+## Method Overriding
+
+```
+- Hal yang sering dilakukan oleh programmer Spring adalah membuat kontrak berupa interface, 
+  dan membuat bean berupa class implementasi dari interface tersebut.
+- Hati-hati kalau menggunakan interface sebagai kontrak-nya,
+  karena ketika kita override methodnya di class,
+  lalu di dalam method tersebut kita tambahkan annotation untuk Bean Validation, 
+  maka ototmatis akan terjadi error.
+- Karena Bean validation mendeteksi terjadi perubahan di method overridingnya. 
+  (Misalnya di dalam interface tidak ada anotation @BeanValidation,
+  tapi di dalam class implemetasinya ada anotation @BeanValidation).
+```
+
+> > Contoh: Method Overriding
+> >> 1. Buat di pacakage helper -> interface ISayHello
+> >> 2. Ubah class SayHello menjadi implementasi dari ISayHello.
+> >> 3. Kemudian coba jalankan say hello test.
+
+> Solusinya gimana?
+> > Memindahkan semua anotation Validation ke dalam interface-nya.
+> > Dengan demikian, bean validation tidak akan mendeteksi adanya perubahan ada method overriding-nya.   
