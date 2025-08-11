@@ -57,3 +57,20 @@ https://docs.google.com/presentation/d/133iTYTxD52P5vD-Z74Gt4_I8A5ESZbzOsKcP4REi
 > > Contoh: Membuat messages.properties
 > > 1. Buat file messages.properties di src/main/resources.
 > > 2. Update unit testnya pada class ValidatorTest => palindromeInvalidMessage()
+
+## Method Validation
+
+```
+- Menggunakan Bean validation pada method untuk melakukan validation di level method sangat ribet.
+- Namun ini dibantu dengan fitur Bean Post Processor.
+- Spring menggunakan class MethodValidationPostProcessor akan otomatis mencari bean yang memiliki annotation @Validated.
+- Kita tidak perlu meregistrasikan MethodValidationPostProcessor secara manual,
+  itu sudah otomatis dibuat oleh class ValidationAutoConfiguration.
+- Jika terjadi validasi error, secara otomatis akan throw ConstraintViolationException.
+```
+
+> > Contoh: Membuat Method Validation
+> >> 1. Membuat sebuah component Sayhello
+        dengan setiap method memiliki fitur validasi secara otomatis.
+        Pada pacakage helper => SayHello.java
+> >> 2. Buat class SayHelloTest untuk melakukan unit test.
