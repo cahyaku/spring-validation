@@ -96,4 +96,26 @@ https://docs.google.com/presentation/d/133iTYTxD52P5vD-Z74Gt4_I8A5ESZbzOsKcP4REi
 
 > Solusinya gimana?
 > > Memindahkan semua anotation Validation ke dalam interface-nya.
-> > Dengan demikian, bean validation tidak akan mendeteksi adanya perubahan ada method overriding-nya.   
+> > Dengan demikian, bean validation tidak akan mendeteksi adanya perubahan ada method overriding-nya.
+
+# Configuration Properties
+
+```
+- Spring mendukung validasi bean Configuration Properties dengan Bean Validation.
+- Hal ini bisa memastikan bahwa data di Configuration Properties sudah valid.
+  Jika tidak valid, maka otomatis pembuatan bean akan gagal, dan aplikasi akan berhenti.
+```
+
+> Contoh: Memiliki bean Configuration Properties DatabaseProperties,
+> dan ingin memastikan username dan password tidak boleh kosong.
+> > 1. Buat package properties -> class DatabaseProperties
+> > 2. Tambahkan @EnableConfigurationProperties(DatabaseProperties.class) pada class SpringValidationApplication.
+> > 3. Test running di class SpringValidationApplication, akan error karena username dan password kosong.
+> > 4. Kemudian bisa tambahkan pada application.properties
+> > 5. Kemudian test running lagi pada class SpringValidationApplication, akan berhasil.
+
+```
+Jadi untuk memastikan configurasinya valid, 
+cukup tambahkan anotasi bean validation di dalam
+class Configuration Properties-nya.
+```
